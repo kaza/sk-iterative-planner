@@ -166,6 +166,12 @@ public sealed class IterativePlanner
         Regex untilAction = new Regex(@"(.*)(?=Action:)", RegexOptions.Singleline);
         Match untilActionMatch = untilAction.Match(input);
 
+        if (input.StartsWith("Final Answer:"))
+        {
+            result.FinalAnswer = input;
+            return result;
+        }
+
         if (untilActionMatch.Success)
         {
             result.Thought = untilActionMatch.Value;

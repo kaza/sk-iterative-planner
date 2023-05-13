@@ -26,14 +26,24 @@ namespace UsageExample
         private static async Task LeonardosGirflfriend()
         {
             var kernel = GetKernel();
+            
             using var googleConnector = new GoogleConnector(Env.Var("GOOGLE_API_KEY"), Env.Var("GOOGLE_SEARCH_ENGINE_ID"));
-            var webSearchEngineSkill = new WebSearchEngineSkill(googleConnector);
-            kernel.ImportSkill(webSearchEngineSkill, "google");
+            using var bingConnector = new BingConnector(Env.Var("BING_API_KEY"));
+
+            var webSearchEngineSkill = new WebSearchEngineSkill(bingConnector);
+
+            kernel.ImportSkill(webSearchEngineSkill, "websearch");
+
+            
             kernel.ImportSkill(new LanguageCalculatorSkill(kernel), "calculator");
 
             
             string goal = "Who is Leo DiCaprio's girlfriend? What is her current age raised to the 0.43 power?";
+            
             //string goal =  "Who is the current president of the United States? What is his current age divided by 2";
+            //using bing :)
+            //Result :Joe Biden's age divided by 2 is 39, which is the same as the number of years he has been in politics!
+
             IterativePlanner planer = new IterativePlanner(kernel, 5);
             var result =await  planer.ExecutePlanAsync(goal);
 
