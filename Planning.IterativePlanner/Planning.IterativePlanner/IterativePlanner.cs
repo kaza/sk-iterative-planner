@@ -94,10 +94,12 @@ public sealed class IterativePlanner
             var nextStep = ParseResult(actionText);
             steps.Add(nextStep);
 
-            nextStep.Observation = await  InvokeActionAsync(nextStep.Action, nextStep.ActionInput);
-
             if (!String.IsNullOrEmpty(nextStep.FinalAnswer))
                 return nextStep.FinalAnswer;
+
+            nextStep.Observation = await  InvokeActionAsync(nextStep.Action, nextStep.ActionInput);
+
+          
 
         }
 

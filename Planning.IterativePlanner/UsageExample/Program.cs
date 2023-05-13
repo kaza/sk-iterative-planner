@@ -34,9 +34,13 @@ namespace UsageExample
             
             string goal = "Who is Leo DiCaprio's girlfriend? What is her current age raised to the 0.43 power?";
             //string goal =  "Who is the current president of the United States? What is his current age divided by 2";
-            IterativePlanner planer = new IterativePlanner(kernel);
-            var plan =await  planer.ExecutePlanAsync(goal);
-          
+            IterativePlanner planer = new IterativePlanner(kernel, 5);
+            var result =await  planer.ExecutePlanAsync(goal);
+
+            Console.WriteLine( "Result :" + result);
+
+            Console.ReadLine();
+
         }
 
         private static IKernel GetKernel()
