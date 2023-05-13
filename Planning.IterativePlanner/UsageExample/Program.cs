@@ -46,7 +46,7 @@ namespace UsageExample
         private static IKernel GetKernel()
         {
             var kernel = new KernelBuilder()
-                .WithLogger(ConsoleLogger.Log)
+                //.WithLogger(ConsoleLogger.Log)
                 .Build();
 
             kernel.Config.AddAzureTextCompletionService(

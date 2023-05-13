@@ -153,7 +153,7 @@ public sealed class IterativePlanner
     {
         var color = Console.ForegroundColor;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        //Console.WriteLine(planResultString);
+        Console.WriteLine(planResultString);
 
         Console.ForegroundColor = color;
     }
