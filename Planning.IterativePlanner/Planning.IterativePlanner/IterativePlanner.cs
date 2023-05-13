@@ -144,7 +144,7 @@ public sealed class IterativePlanner
             throw new Exception("no such function" + actionName);
 
         var func = _kernel.Func(theFunction.SkillName, theFunction.Name);
-        var result = await func.InvokeAsync(actionActionInput, _context).ConfigureAwait(false);
+        var result = await func.InvokeAsync(actionActionInput).ConfigureAwait(false);
         PrintColored(result.Result);
         return result.Result;
     }

@@ -70,7 +70,7 @@ Question: {{ $input }}.
     {
         
       
-        var answer = await _mathTranslator.InvokeAsync(input, context);
+        var answer = await _mathTranslator.InvokeAsync(input);
         //Console.WriteLine(answer.Result);
 
         string pattern = @"```\s*(.*?)\s*```";

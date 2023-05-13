@@ -32,7 +32,7 @@ namespace UsageExample
 
             var webSearchEngineSkill = new WebSearchEngineSkill(bingConnector);
 
-            kernel.ImportSkill(webSearchEngineSkill, "web-search");
+            kernel.ImportSkill(webSearchEngineSkill, "WebSearch");
 
             
             kernel.ImportSkill(new LanguageCalculatorSkill(kernel), "calculator");
