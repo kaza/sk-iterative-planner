@@ -83,6 +83,7 @@ Question: {{ $input }}.
         }
         else
         {
+            Console.WriteLine(input);
             var e = new ArgumentException(
                 $"Input value [{input}] could not be understood, received following {answer.Result} ", nameof(input));
             return await Task.FromException<string>(e);

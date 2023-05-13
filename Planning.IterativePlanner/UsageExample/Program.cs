@@ -39,7 +39,7 @@ namespace UsageExample
 
             
             string goal = "Who is Leo DiCaprio's girlfriend? What is her current age raised to the 0.43 power?";
-            
+            // result Result :Camila Morrone's age raised to the 0.43 power is approximately 4
             //string goal =  "Who is the current president of the United States? What is his current age divided by 2";
             //using bing :)
             //Result :Joe Biden's age divided by 2 is 39, which is the same as the number of years he has been in politics!
