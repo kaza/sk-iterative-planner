@@ -1,9 +1,9 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 
-using System.IO;
 using System.Reflection;
+using Microsoft.SemanticKernel.Planning;
 
-namespace Microsoft.SemanticKernel.Planning.Sequential;
+namespace Planning.IterativePlanner;
 
 internal sealed class EmbeddedResource
 {
